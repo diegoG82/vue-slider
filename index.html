@@ -14,6 +14,7 @@
   <body>
     <div id="app">
       <div class="container">
+        <!-- mouseout e mouseover sul div dell'item pr stoppare e ripartire il carosello -->
         <div @mouseout="startAutoPlay" @mouseover="mouseStop" class="slider-wrapper" tabindex="0">
           <div class="item">
             <img
@@ -28,6 +29,7 @@
           <div class="thumbs">
             <div class="prev" @click="imgPrev"></div>
             <div class="next" @click="imgNext"></div>
+            <!-- Al click del thumb assegno la funzione per mostrare l'immagine corrispondente in indice -->
             <div @click="seeBigImg(index)"
               class="thumb"
               :class="index === indexImg ? 'active' :'' "

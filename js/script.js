@@ -79,13 +79,14 @@ createApp({
       this.interval = setInterval(this.imgNext, this.time);
     },
 
+    // METODO PER STOPPARE IL CAROSELLO
     mouseStop() {
       clearInterval(this.interval);
     },
 
-    seeBigImg(clickedIndex){
-    this.indexImg = clickedIndex
-},
-
+    // METODO PER MOSTRARE AL CLIC L'IMMAGINE GRANDE
+    seeBigImg(clickedIndex) {
+      this.indexImg = clickedIndex;
+    },
   },
 }).mount("#app");
