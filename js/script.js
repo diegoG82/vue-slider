@@ -8,6 +8,8 @@ createApp({
   data() {
     return {
       indexImg: 0,
+      time: 3000,
+      interval: null,
 
       slides: [
         {
@@ -39,6 +41,10 @@ createApp({
     };
   },
 
+  mounted() {
+    this.startAutoPlay();
+  },
+
   //   METHODS AND EVENT HANDLING
   methods: {
     // METODO PER FAR SCORRERE L'IMMAGINE AVANTI
@@ -62,7 +68,8 @@ createApp({
       console.log(this.imgPrev);
     },
 
-    // GESTIONE THUMBS
-    
+    startAutoPlay() {
+      this.interval = setInterval(this.imgNext, this.time);
+    },
   },
 }).mount("#app");
