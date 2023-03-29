@@ -1,4 +1,3 @@
-
 // Descrizione:
 // Partendo dal markup della versione svolta in js plain, rifare lo slider ma questa volta usando Vue.
 
@@ -8,10 +7,12 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      indexImg: 0,
+
       slides: [
         {
           image: "img/01.webp",
-          title: "Marvel's Spiderman Miles Morale",
+          title: "Marvel's Spiderman Miles Morales",
           text: "Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.",
         },
         {
@@ -40,8 +41,28 @@ createApp({
 
   //   METHODS AND EVENT HANDLING
   methods: {
+    // METODO PER FAR SCORRERE L'IMMAGINE AVANTI
 
+    imgNext() {
+      if (this.indexImg < this.slides.length - 1) {
+        this.indexImg++;
+      } else {
+        this.indexImg = 0;
+      }
+      console.log(this.imgNext);
+    },
+    // METODO PER FAR SCORRERE L'IMMAGINE INDIETRO
 
+    imgPrev() {
+      if (this.indexImg > 0) {
+        this.indexImg--;
+      } else {
+        this.indexImg = this.slides.length - 1;
+      }
+      console.log(this.imgPrev);
+    },
 
+    // GESTIONE THUMBS
+    
   },
 }).mount("#app");
